@@ -1,0 +1,58 @@
+[251]fs.readFile-->[118]path(BracketsFiler.js) in readFile: function-->[31]exports.decodePath(FilerUtils)-->[38]decodeUri--> [120]Back to BracketsFiler.js  in readFile: function ??-->[126] proxyCall(BracketsFiler.js)-->proxyCall function defined(RemoteFiler.js)-->[69]UUID. generate() definition(uuid.core.js)-->[70]callbackQueue[id](RemoteFiler.js)??-->[75]fnQueue.exec(RemoteFiler.js)-->[11]fn.call || queue.push(fn);(queue.js)-->[77]RemoteFiler.js(transfer is not an option so why?) checks if transfer of data is allowed--> [80]-->stat: function(path, callback)(BracketsFiler.js)-->fs.readFile
+
+After 80:
+-File.js
+-return result.promise();- FileUtils.js[88]
+-// Optional JSON config for require.js
+FileUtils.readAsText(extensionConfigFile)[129]--->[144]
+[149]return deferred.promise();
+-// Read optional requirejs-config.json
+[173]
+
+
+Filer.js POSIX
+Put the filesystem (i.e., IndexedDB database) in the hosting app, and use a MessageChannel to proxy calls to the filesystem from the editor iframe. This is fairly straightforward, since all filesystem operations were already async.
+
+FileUtils.js
+Reads read data as text. function
+
+
+
+*********Download Directory**********
+ArchiveUtils.js
+FileSaver.js
+
+***********zipping &  Download flow*************
+-readdir(BracketsFiler.js)-->
+-Path check(FilerUtils.js)-->
+-readdir proxycall(BracketsFiler.js)-->
+-UUID.generate-->
+-queue
+-postMessage
+-adddir-->jszip(path)(ArchiveUtils.js)
+-callback(FilerUtils.js)
+-FileSaver.js
+
+******************************************file Download flow***********
+-FileSaver.js(48)
+
+
+
+
+********************
+-admzip
+
+
+
+**************************
+var _iframe for iframe of editor
+
+*********************************
+download process
+-Menu.js(613)
+
+
+*********************************
+download with zip button function flow = 
+ArchiveUtils.js
+function archive(path, rootName, callback)

@@ -1,0 +1,43 @@
+<!doctype html>
+
+<!--
+Bramble must be hosted in an iframe vs. loaded directly.
+This page is a helper for local development.
+-->
+
+<html spellcheck="false">
+<head>
+    <meta charset="utf-8">
+    <title>Framed Bramble</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .full {
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div id="bramble" class="full">
+    </div>
+    <script src="thirdparty/require.min.js" data-main="hosted.js"></script>
+    <script src="command/Menus.js"></script>
+    <!--script>
+            $(function () {  
+        $("#bramble-bae0c5ac-a091-4c85-a69d-e581dbe95750").load(function () {                        
+            frames["bramble-bae0c5ac-a091-4c85-a69d-e581dbe95750"].document.body.innerHTML = htmlValue;
+        });
+    }); 
+        </script-->
+    
+    <!--script>
+    document.getElementById('targetFrame').contentWindow.targetFunction();
+    </script-->
+    
+</body>
+</html>
